@@ -9,7 +9,7 @@ const HeroSection = () => {
       <div className={styles.heroOverlay}>
         <div className={`container ${styles.heroContainer}`}>
           <h1 className={styles.heroTitle}>
-            Innovative Plastic Solutions
+            Innovative Solutions
           </h1>
           <p className={styles.heroSubtitle}>
             Delivering high-quality, durable plastic components for various industries.

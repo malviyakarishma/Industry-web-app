@@ -2,7 +2,7 @@
 const productsData = [
   {
     id: "industrial-containers",
-    imgSrc: "https://placehold.co/400x300/93C5FD/FFFFFF?text=Product+1",
+    imgSrc: "/images/image1.png",
     altText: "Product 1",
     title: "Industrial Containers",
     description: "Durable and reliable containers for various industrial uses. Available in multiple sizes.",
@@ -17,7 +17,7 @@ const productsData = [
   },
   {
     id: "custom-molded-parts",
-    imgSrc: "https://placehold.co/400x300/6EE7B7/FFFFFF?text=Product+2",
+    imgSrc: "/images/image2.png",
     altText: "Product 2",
     title: "Custom Molded Parts",
     description: "Precision-engineered custom parts to meet your specific design requirements.",
@@ -32,7 +32,7 @@ const productsData = [
   },
   {
     id: "packaging-solutions",
-    imgSrc: "https://placehold.co/400x300/FBBF24/FFFFFF?text=Product+3",
+    imgSrc: "/images/image3.png",
     altText: "Product 3",
     title: "Packaging Solutions",
     description: "Innovative and sustainable packaging options for consumer and industrial goods.",
@@ -47,7 +47,7 @@ const productsData = [
   },
   {
     id: "automotive-components",
-    imgSrc: "https://placehold.co/400x300/F87171/FFFFFF?text=Product+4",
+    imgSrc: "/images/image4.png",
     altText: "Product 4",
     title: "Automotive Components",
     description: "High-performance plastic components for the automotive industry.",

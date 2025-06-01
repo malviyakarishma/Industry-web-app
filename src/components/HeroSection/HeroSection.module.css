@@ -2,7 +2,7 @@
 .heroSection {
   color: var(--color-text-inverted);
   /* From inline style: hero-bg */
-  background-image: url('https://placehold.co/1920x800/334155/E2E8F0?text=Industrial+Banner');
+  background-image: url('/images/banner.jpg');
   background-size: cover;
   background-position: center;
   position: relative; /* For overlay */
