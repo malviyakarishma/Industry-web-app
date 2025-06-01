@@ -1,0 +1,140 @@
+/* src/components/Header/Header.module.css */
+.header {
+  background-color: var(--color-bg-white);
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-height);
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%; /* Changed from h-20 */
+}
+
+.logoContainer {
+  flex-shrink: 0;
+}
+
+.logo {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+  color: var(--color-primary);
+}
+
+.desktopNav {
+  display: none; /* hidden */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+  .desktopNav {
+    display: flex;
+    gap: 1.5rem; /* space-x-6 */
+  }
+}
+@media (min-width: 1024px) { /* lg breakpoint */
+  .desktopNav {
+    gap: 2rem; /* lg:space-x-8 */
+  }
+}
+
+.navLink {
+  color: var(--color-text-medium); /* text-gray-600 */
+  padding: 0.5rem 0.75rem; /* px-3 py-2 */
+  border-radius: var(--border-radius-md); /* rounded-md */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.navLink:hover {
+  color: var(--color-primary); /* hover:text-blue-600 */
+  background-color: #EFF6FF; /* Example: blue-50 for hover bg */
+}
+
+.mobileMenuButtonContainer {
+  display: flex; /* md:hidden flex items-center */
+  align-items: center;
+}
+@media (min-width: 768px) { /* md breakpoint */
+  .mobileMenuButtonContainer {
+    display: none;
+  }
+}
+
+.mobileMenuButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem; /* p-2 */
+  border-radius: var(--border-radius-md);
+  color: var(--color-text-medium); /* text-gray-500 */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.mobileMenuButton:hover {
+  color: var(--color-text-dark); /* hover:text-gray-700 */
+  background-color: var(--color-bg-medium); /* hover:bg-gray-100 */
+}
+
+.mobileMenuButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-primary); /* focus:ring-2 focus:ring-inset focus:ring-blue-500 */
+}
+
+/* Mobile Menu Styles */
+.mobileMenu {
+  background-color: var(--color-bg-white);
+  box-shadow: var(--shadow-lg);
+  display: none; /* hidden by default */
+  position: absolute; /* Added for positioning */
+  top: var(--header-height); /* Position below header */
+  left: 0;
+  right: 0;
+  z-index: 40; /* Below header but above content */
+}
+
+.mobileMenuOpen {
+  display: block; /* Show when open */
+}
+@media (min-width: 768px) { /* md breakpoint */
+  .mobileMenu { /* md:hidden */
+    display: none !important; /* Ensure it's hidden on larger screens */
+  }
+}
+
+
+.mobileNavLinks {
+  padding: 0.5rem 0.5rem 0.75rem; /* px-2 pt-2 pb-3 */
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* space-y-1 */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+  .mobileNavLinks {
+    padding-left: 0.75rem; /* sm:px-3 */
+    padding-right: 0.75rem; /* sm:px-3 */
+  }
+}
+
+.mobileNavLink {
+  color: var(--color-text-dark); /* text-gray-700 */
+  display: block;
+  padding: 0.5rem 0.75rem; /* px-3 py-2 */
+  border-radius: var(--border-radius-md);
+  font-size: 1rem; /* text-base */
+  font-weight: 500; /* font-medium */
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.mobileNavLink:hover {
+  background-color: #EFF6FF; /* hover:bg-blue-50, a light blue */
+  color: var(--color-primary); /* hover:text-blue-600 */
+}

@@ -1,0 +1,88 @@
+/* src/components/HeroSection/HeroSection.module.css */
+.heroSection {
+  color: var(--color-text-inverted);
+  /* From inline style: hero-bg */
+  background-image: url('https://placehold.co/1920x800/334155/E2E8F0?text=Industrial+Banner');
+  background-size: cover;
+  background-position: center;
+  position: relative; /* For overlay */
+}
+
+.heroOverlay {
+  background-color: rgba(0, 0, 0, 0.5); /* bg-black bg-opacity-50 */
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+  .heroOverlay {
+    min-height: 80vh; /* lg:min-h-[80vh] */
+  }
+}
+
+.heroContainer {
+  text-align: center;
+  padding-top: 4rem; /* py-16 */
+  padding-bottom: 4rem; /* py-16 */
+}
+@media (min-width: 768px) { /* md breakpoint */
+  .heroContainer {
+    padding-top: 6rem; /* md:py-24 */
+    padding-bottom: 6rem; /* md:py-24 */
+  }
+}
+
+.heroTitle {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 1.5rem; /* mb-6 */
+  line-height: 1.2; /* leading-tight */
+}
+@media (min-width: 640px) { /* sm breakpoint */
+  .heroTitle {
+    font-size: 3rem; /* sm:text-5xl */
+  }
+}
+@media (min-width: 768px) { /* md breakpoint */
+  .heroTitle {
+    font-size: 3.75rem; /* md:text-6xl */
+  }
+}
+
+.heroSubtitle {
+  font-size: 1.125rem; /* text-lg */
+  margin-bottom: 2.5rem; /* mb-10 */
+  max-width: 48rem; /* max-w-3xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 640px) { /* sm breakpoint */
+  .heroSubtitle {
+    font-size: 1.25rem; /* sm:text-xl */
+  }
+}
+@media (min-width: 768px) { /* md breakpoint */
+  .heroSubtitle {
+    font-size: 1.5rem; /* md:text-2xl */
+  }
+}
+
+.heroButton {
+  background-color: var(--color-primary); /* bg-blue-600 */
+  color: var(--color-bg-white); /* text-white */
+  font-weight: 600; /* font-semibold */
+  padding: 0.75rem 2rem; /* py-3 px-8 */
+  border-radius: var(--border-radius-lg); /* rounded-lg */
+  font-size: 1.125rem; /* text-lg */
+  transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out;
+  box-shadow: var(--shadow-lg); /* shadow-lg */
+  display: inline-block; /* To apply transform */
+}
+
+.heroButton:hover {
+  background-color: var(--color-primary-hover); /* hover:bg-blue-700 */
+  box-shadow: var(--shadow-xl); /* hover:shadow-xl */
+  transform: scale(1.05); /* hover:scale-105 */
+}

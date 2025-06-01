@@ -1,0 +1,86 @@
+/* src/components/ServicesSection/ServicesSection.module.css */
+.servicesSection {
+  padding-top: 4rem; /* py-16 */
+  padding-bottom: 4rem;
+  background-color: var(--color-bg-white); /* bg-white */
+}
+@media (min-width: 768px) { /* md breakpoint */
+  .servicesSection {
+    padding-top: 6rem; /* md:py-24 */
+    padding-bottom: 6rem;
+  }
+}
+
+.headingContainer {
+  text-align: center;
+  margin-bottom: 3rem; /* mb-12 */
+}
+@media (min-width: 768px) { /* md breakpoint */
+  .headingContainer {
+    margin-bottom: 4rem; /* md:mb-16 */
+  }
+}
+
+.sectionTitle {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  color: var(--color-text-dark);
+  margin-bottom: 1rem; /* mb-4 */
+}
+@media (min-width: 640px) { /* sm breakpoint */
+  .sectionTitle {
+    font-size: 2.25rem; /* sm:text-4xl */
+  }
+}
+
+.sectionSubtitle {
+  font-size: 1.125rem; /* text-lg */
+  color: var(--color-text-medium);
+  max-width: 42rem; /* max-w-2xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.servicesGrid {
+  display: grid;
+  gap: 2rem; /* gap-8 */
+  text-align: center;
+}
+@media (min-width: 768px) { /* md breakpoint */
+  .servicesGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* md:grid-cols-3 */
+  }
+}
+
+/* ServiceItem specific styles */
+.serviceItem {
+  padding: 1.5rem; /* p-6 */
+  border-radius: var(--border-radius-lg); /* rounded-lg */
+  /* No explicit background in HTML, so it's transparent or inherits from parent */
+}
+
+.iconContainer {
+  color: var(--color-primary); /* text-blue-500 */
+  margin-bottom: 1rem; /* mb-4 */
+  display: inline-block; /* inline-block */
+}
+
+.serviceIcon {
+  width: 4rem; /* w-16 */
+  height: 4rem; /* h-16 */
+  margin-left: auto; /* mx-auto */
+  margin-right: auto; /* mx-auto */
+}
+
+.serviceTitle {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 0.5rem; /* mb-2 */
+  color: var(--color-text-dark);
+}
+
+.serviceDescription {
+  color: var(--color-text-medium); /* text-gray-600 */
+  font-size: 1rem;
+  line-height: 1.6;
+}
