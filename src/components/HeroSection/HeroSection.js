@@ -15,7 +15,7 @@ const HeroSection = () => {
             Delivering high-quality, durable plastic components for various industries.
           </p>
           <div>
-            <Link href="#products" className={styles.heroButton}>
+            <Link href="/products" className={styles.heroButton}>
               Explore Our Products
             </Link>
           </div>

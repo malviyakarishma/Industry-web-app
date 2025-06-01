@@ -31,8 +31,27 @@ export const TwitterIcon = (props) => (
   </svg>
 );
 
-export const InstagramIcon = (props) => ( // Placeholder for the third icon, which was generic
-  <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" {...props}>
-    <path fillRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 16a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 110-8 4 4 0 010 8z" clipRule="evenodd" />
+export const InstagramIcon = (props) => (
+  <svg
+    fill="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zm0 1.5h8.5a4.25 4.25 0 014.25 4.25v8.5a4.25 4.25 0 01-4.25 4.25h-8.5a4.25 4.25 0 01-4.25-4.25v-8.5a4.25 4.25 0 014.25-4.25z" />
+    <path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 1.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7zM17.5 6.25a1 1 0 11-2 0 1 1 0 012 0z" />
+  </svg>
+);
+
+export const YouTubeIcon = (props) => (
+  <svg
+    fill="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M23.498 6.186a2.998 2.998 0 00-2.108-2.12C19.668 3.5 12 3.5 12 3.5s-7.668 0-9.39.566a2.998 2.998 0 00-2.108 2.12A31.19 31.19 0 000 12a31.19 31.19 0 00.502 5.814 2.998 2.998 0 002.108 2.12c1.722.566 9.39.566 9.39.566s7.668 0 9.39-.566a2.998 2.998 0 002.108-2.12A31.19 31.19 0 0024 12a31.19 31.19 0 00-.502-5.814zM10 15.5v-7l6 3.5-6 3.5z" />
   </svg>
 );

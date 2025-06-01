@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  flex-wrap: nowrap; /* prevent wrapping so heights align */
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  align-items: stretch; /* make children equal height */
+}
+
+.imageContainer {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden; /* to clip image rounding */
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* keep aspect ratio and cover container */
+  border-radius: 12px; /* same radius to match container */
+}
+
+.detailsBox {
+  flex: 1 1 50%;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertically center details */
+}
+
+/* Keep the rest the same */
+.title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #4b5563;
+}
+
+.detailsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.detailsList li {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.detailsList strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .imageContainer,
+  .detailsBox {
+    flex: 1 1 100%;
+  }
+
+  .image {
+    height: auto; /* reset height for smaller screens */
+  }
+}
