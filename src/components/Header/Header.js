@@ -50,10 +50,9 @@ const Header = () => {
   }, [isMobileMenuOpen]); // Re-run if mobile menu state changes to update links
 
   const navItems = [
-    { href: '#home', label: 'Home' },
+    { href: '/', label: 'Home' },
     { href: '/about', label: 'About Us' },
-    { href: '#products', label: 'Products' },
-    { href: '#services', label: 'Services' },
+    { href: '/products', label: 'Products' },
     { href: '/contact', label: 'Contact' },
   ];
 
