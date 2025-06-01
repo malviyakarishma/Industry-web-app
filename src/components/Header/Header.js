@@ -61,7 +61,7 @@ const Header = () => {
     <header className={styles.header} ref={headerRef}>
       <div className={`container ${styles.headerContainer}`}>
         <div className={styles.logoContainer}>
-          <Link href="#home" className={styles.logo}>IndusPlast Co.</Link>
+          <Link href="#home" className={styles.logo}>Baneshwari Industries</Link>
         </div>
 
         <nav className={styles.desktopNav}>

@@ -4,7 +4,7 @@ import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 
 export const metadata = {
-  title: 'IndusPlast Co. - Industrial Solutions',
+  title: 'Baneshwari Industries',
   description: 'Delivering high-quality, durable plastic components for various industries.',
 };
 

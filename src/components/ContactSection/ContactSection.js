@@ -21,7 +21,8 @@ const ContactSection = () => {
           </p>
         </div>
         <div className={styles.formContainer}>
-          <form onSubmit={handleSubmit}>
+          <form action='https://formspree.io/f/mnnvakjw'
+                method='POST'>
             <div className={styles.formGrid}>
               <div>
                 <label htmlFor="name" className={styles.label}>Full Name</label>
