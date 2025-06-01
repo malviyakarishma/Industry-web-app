@@ -1,6 +1,6 @@
 // src/components/ServicesSection/ServiceItem.js
 import React from 'react';
-import styles from './ServicesSection.module.css';
+import styles from './ServiceSection.module.css';
 
 const ServiceItem = ({ IconComponent, title, description }) => {
   return (

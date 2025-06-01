@@ -2,7 +2,7 @@
 import HeroSection from '../components/HeroSection/HeroSection';
 import AboutSection from '../components/AboutSection/AboutSection';
 import ProductsSection from '../components/ProductsSection/ProductsSection';
-import ServicesSection from '../components/ServicesSection/ServicesSection';
+import ServiceSection from '../components/ServiceSection/ServiceSection';
 import ContactSection from '../components/ContactSection/ContactSection';
 
 export default function HomePage() {
@@ -11,7 +11,7 @@ export default function HomePage() {
       <HeroSection />
       <AboutSection />
       <ProductsSection />
-      <ServicesSection />
+      <ServiceSection />
       <ContactSection />
     </>
   );

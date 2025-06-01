@@ -1,8 +1,8 @@
 // src/components/ServicesSection/ServicesSection.js
 import React from 'react';
-import ServiceItem from './ServiceItem';
+import ServiceItem from './ServiceItems';
 import { DesignIcon, QualityIcon, DeliveryIcon } from '../SVGIcons'; // Import SVGs
-import styles from './ServicesSection.module.css';
+import styles from './ServiceSection.module.css';
 
 const servicesData = [
   {
