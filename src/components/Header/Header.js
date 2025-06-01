@@ -51,10 +51,10 @@ const Header = () => {
 
   const navItems = [
     { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About Us' },
+    { href: '/about', label: 'About Us' },
     { href: '#products', label: 'Products' },
     { href: '#services', label: 'Services' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   return (
