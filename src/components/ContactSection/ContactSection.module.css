@@ -1,129 +1,326 @@
 /* src/components/ContactSection/ContactSection.module.css */
-.contactSection {
-  padding-top: 4rem; /* py-16 */
-  padding-bottom: 4rem;
-  background-color: var(--color-bg-dark); /* bg-gray-800 */
-  color: var(--color-text-light); /* text-gray-200 */
+
+/*
+  REMINDER: Define these CSS Variables in your global stylesheet (e.g., globals.css)
+  --color-bg-neutral-light: #f9fafb;
+  --color-text-dark: #1F2937;
+  --color-text-medium: #4B5563;
+  --color-text-content: #4B5563;
+  --color-text-input: #111827;
+  --color-text-placeholder: #9CA3AF;
+  --color-bg-white: #ffffff;
+  --color-primary: #007bff;
+  --color-primary-dark: #0056b3;
+  --color-primary-darker: #003763;
+  --color-primary-hover: #0069d9;
+  --color-primary-dark-hover: #004085;
+  --color-primary-focus-ring: rgba(0, 123, 255, 0.35);
+  --color-danger: #EF4444;
+  --color-border-neutral: #D1D5DB;
+  --color-bg-input: #FFFFFF;
+  --border-radius-md: 0.375rem;
+  --border-radius-lg: 0.5rem;
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+*/
+
+/* Global container (example - ensure this matches your project) */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 640px) { .container { max-width: 640px; } }
+@media (min-width: 768px) { .container { max-width: 768px; } }
+@media (min-width: 1024px) { .container { max-width: 1024px; } }
+@media (min-width: 1280px) { .container { max-width: 1280px; } }
+
+
+/* Section Styles */
+.contactSection {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: var(--color-bg-neutral-light, #f9fafb);
+  color: var(--color-text-dark, #1F2937);
+}
+@media (min-width: 768px) {
   .contactSection {
-    padding-top: 6rem; /* md:py-24 */
+    padding-top: 6rem;
     padding-bottom: 6rem;
   }
 }
 
 .headingContainer {
   text-align: center;
-  margin-bottom: 3rem; /* mb-12 */
+  margin-bottom: 3rem;
 }
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 768px) {
   .headingContainer {
-    margin-bottom: 4rem; /* md:mb-16 */
+    margin-bottom: 4rem;
   }
 }
 
 .sectionTitle {
-  font-size: 1.875rem; /* text-3xl */
-  font-weight: 700; /* font-bold */
-  color: var(--color-bg-white); /* text-white */
-  margin-bottom: 1rem; /* mb-4 */
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text-dark, #111827);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
 }
-@media (min-width: 640px) { /* sm breakpoint */
+@media (min-width: 640px) {
   .sectionTitle {
-    font-size: 2.25rem; /* sm:text-4xl */
+    font-size: 2.5rem;
   }
 }
 
 .sectionSubtitle {
-  font-size: 1.125rem; /* text-lg */
-  color: var(--color-text-light); /* text-gray-400 */
-  max-width: 42rem; /* max-w-2xl */
+  font-size: 1.125rem;
+  color: var(--color-text-medium, #4B5563);
+  max-width: 48rem;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
 }
 
-.formContainer {
-  max-width: 48rem; /* max-w-3xl */
-  margin-left: auto;
-  margin-right: auto;
-  background-color: var(--color-bg-white); /* bg-white */
-  color: var(--color-text-dark); /* text-gray-800 */
-  padding: 2rem; /* p-8 */
-  border-radius: var(--border-radius-lg); /* rounded-lg */
-  box-shadow: var(--shadow-2xl); /* shadow-2xl */
+/* Content Wrapper for Info + Form */
+.contactContentWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: flex-start;
 }
-@media (min-width: 640px) { /* sm breakpoint */
-  .formContainer {
-    padding: 2.5rem; /* sm:p-10 */
+@media (min-width: 1024px) {
+  .contactContentWrapper {
+    grid-template-columns: 1fr 1.5fr; /* Adjust ratio as needed */
+    gap: 4rem;
   }
+}
+
+/* Contact Information Block */
+.contactInfoContainer {
+  padding: 1.5rem;
+  background-color: var(--color-bg-white, #ffffff);
+  border-radius: var(--border-radius-lg, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05));
+}
+@media (min-width: 1024px) {
+  .contactInfoContainer {
+    padding: 2rem;
+  }
+}
+
+.infoTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-dark, #1F2937);
+  margin-bottom: 1rem;
+}
+
+.infoText {
+  font-size: 1rem;
+  color: var(--color-text-content, #4B5563);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.infoList li {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1rem;
+  color: var(--color-text-content, #4B5563);
+  line-height: 1.6;
+}
+
+.infoList li a {
+  color: var(--color-primary, #007bff);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.infoList li a:hover {
+  color: var(--color-primary-dark, #0056b3);
+  text-decoration: underline;
+}
+
+.infoIcon {
+  margin-right: 0.75rem;
+  color: var(--color-primary, #007bff);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 0.125em;
+}
+
+/* Form Styles */
+.formOuterContainer {
+  background-color: var(--color-bg-white, #ffffff);
+  color: var(--color-text-dark, #1F2937);
+  padding: 2rem;
+  border-radius: var(--border-radius-lg, 0.5rem);
+  box-shadow: var(--shadow-xl, 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04));
+}
+@media (min-width: 640px) {
+  .formOuterContainer {
+    padding: 2.5rem;
+  }
+}
+
+.contactForm {
+  /* Form itself doesn't need much styling, structure comes from elements */
 }
 
 .formGrid {
   display: grid;
-  grid-template-columns: 1fr; /* grid-cols-1 */
-  gap: 1.5rem; /* gap-6 */
-  margin-bottom: 1.5rem; /* mb-6 */
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 640px) {
   .formGrid {
-    grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 .formGroup {
-  margin-bottom: 1.5rem; /* mb-6 */
+  margin-bottom: 1.5rem;
+}
+.formGroup:last-of-type { /* Textarea group */
+  margin-bottom: 2rem; /* More space before button */
 }
 
 .label {
   display: block;
-  font-size: 0.875rem; /* text-sm */
-  font-weight: 500; /* font-medium */
-  color: var(--color-text-dark); /* text-gray-700 */
-  margin-bottom: 0.25rem; /* mb-1 */
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-dark, #374151);
+  margin-bottom: 0.375rem;
+}
+
+.requiredIndicator {
+  color: var(--color-danger, #EF4444);
+  font-weight: 700;
+  margin-left: 0.25rem;
 }
 
 .inputField,
 .textareaField {
-  width: 100%; /* w-full */
-  padding: 0.5rem 1rem; /* px-4 py-2 */
-  border: 1px solid #D1D5DB; /* border border-gray-300 */
-  border-radius: var(--border-radius-md); /* rounded-md */
-  box-shadow: var(--shadow-sm); /* shadow-sm */
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border-neutral, #D1D5DB);
+  border-radius: var(--border-radius-md, 0.375rem);
+  box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0,0,0,0.05));
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   font-size: 1rem;
-  color: var(--color-text-dark);
+  color: var(--color-text-input, #111827);
+  background-color: var(--color-bg-input, #FFFFFF);
+}
+
+.inputField::placeholder,
+.textareaField::placeholder {
+  color: var(--color-text-placeholder, #9CA3AF);
+  opacity: 1; /* Firefox fix */
 }
 
 .inputField:focus,
 .textareaField:focus {
   outline: none;
-  border-color: var(--color-primary); /* focus:border-blue-500 */
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.4); /* focus:ring-blue-500 (approx) */
+  border-color: var(--color-primary, #007bff);
+  box-shadow: 0 0 0 3px var(--color-primary-focus-ring, rgba(0, 123, 255, 0.25));
 }
 
 .textareaField {
-  resize: vertical; /* Allow vertical resize, common for textareas */
+  resize: vertical;
+  min-height: 120px;
 }
 
+/* Submit Button Styles - MODIFIED for smaller size */
 .submitButtonContainer {
-  text-align: center;
+  margin-top: 1.5rem; 
 }
 
 .submitButton {
-  background-color: var(--color-primary); /* bg-blue-600 */
-  color: var(--color-bg-white); /* text-white */
-  font-weight: 600; /* font-semibold */
-  padding: 0.75rem 2.5rem; /* py-3 px-10 */
-  border-radius: var(--border-radius-lg); /* rounded-lg */
-  font-size: 1.125rem; /* text-lg */
-  transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem; /* Reduced gap for smaller icon/text */
+  
+  width: 100%; /* Full width on small screens by default */
+  /* MODIFIED padding for a smaller button */
+  padding: 0.625rem 1.25rem; /* Approx 10px top/bottom, 20px left/right */
+  
+  background-image: linear-gradient(to right, var(--color-primary, #007bff) 0%, var(--color-primary-dark, #0056b3) 100%);
+  color: var(--color-bg-white, #ffffff);
+  
+  /* MODIFIED font-size */
+  font-size: 0.875rem; /* Approx 14px, smaller than before */
+  font-weight: 600;
+  line-height: 1.4; /* Adjusted line-height for smaller font */
+  
   border: none;
+  border-radius: var(--border-radius-md, 0.375rem); /* Using md radius for a more compact feel */
+  
   cursor: pointer;
-  box-shadow: var(--shadow-md); /* shadow-md */
+  text-align: center;
+
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06)), 
+              0 0 0 0px var(--color-primary-focus-ring, rgba(0, 123, 255, 0.25)); 
+
+  transition: 
+    background-image 0.3s ease, 
+    transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), 
+    box-shadow 0.3s ease;
+}
+
+.buttonIcon {
+  /* MODIFIED icon size to match smaller button */
+  width: 1rem;   /* Approx 16px */
+  height: 1rem;  /* Approx 16px */
 }
 
 .submitButton:hover {
-  background-color: var(--color-primary-hover); /* hover:bg-blue-700 */
-  box-shadow: var(--shadow-lg); /* hover:shadow-lg */
-  transform: scale(1.05); /* hover:scale-105 */
+  background-image: linear-gradient(to right, var(--color-primary-hover, #0069d9) 0%, var(--color-primary-dark-hover, #004085) 100%);
+  /* MODIFIED transform for smaller button - subtle is key */
+  transform: translateY(-2px) scale(1.01); 
+  box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05)),
+              0 0 0 0px var(--color-primary-focus-ring, rgba(0, 123, 255, 0.25));
+}
+
+.submitButton:active {
+  /* MODIFIED transform for smaller button */
+  transform: translateY(-1px) scale(0.99); 
+  box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0,0,0,0.05)),
+              0 0 0 0px var(--color-primary-focus-ring, rgba(0, 123, 255, 0.25));
+  background-image: linear-gradient(to right, var(--color-primary-dark, #0056b3) 0%, var(--color-primary-darker, #003763) 100%);
+}
+
+.submitButton:focus,
+.submitButton:focus-visible {
+  outline: none; 
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06)),
+              0 0 0 3px var(--color-bg-white, #fff), 
+              0 0 0 5px var(--color-primary-focus-ring, rgba(0, 123, 255, 0.35)); 
+}
+
+/* Responsive adjustments for button width */
+@media (min-width: 480px) { /* Adjust breakpoint as needed */
+  .submitButton {
+    width: auto; 
+    /* MODIFIED min-width for smaller button */
+    min-width: 160px; 
+  }
+  .submitButtonContainer {
+     text-align: left; 
+  }
 }
