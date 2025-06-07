@@ -1,7 +1,8 @@
 // src/app/products/[id]/page.js
 import React from 'react';
 import productsData from '@/components/ProductsSection/ProductData';
-import styles from './ProductDetail.module.css'; // You'll create this CSS file
+import styles from './ProductDetail.module.css';
+import Image from 'next/image'; // You'll create this CSS file
 
 export async function generateStaticParams() {
   return productsData.map(product => ({
@@ -29,7 +30,7 @@ const ProductDetailPage = ({ params }) => {
   return (
     <main className={styles.container}>
       <div className={styles.imageContainer}>
-        <img src={product.imgSrc} alt={product.altText} className={styles.image} />
+        <Image src={product.imgSrc} alt={product.altText} className={styles.image} />
       </div>
       <div className={styles.detailsBox}>
         <h1 className={styles.title}>{product.title}</h1>
