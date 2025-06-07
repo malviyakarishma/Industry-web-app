@@ -34,7 +34,7 @@ const ProductDetailPage = ({ params }) => {
       <div className={styles.detailsBox}>
         <h1 className={styles.title}>{product.title}</h1>
         <p className={styles.description}>{product.description}</p>
-        <h3>Product Details</h3>
+        <h3 className={styles.productdetails}>Product Details</h3>
         <ul className={styles.detailsList}>
           <li><strong>Capacity:</strong> {productSpecs.capacity}</li>
           <li><strong>Automation Grade:</strong> {productSpecs.automation}</li>

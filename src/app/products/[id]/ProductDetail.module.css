@@ -25,6 +25,10 @@
   border-radius: 12px; /* same radius to match container */
 }
 
+.productdetails{
+  color: #111827;
+}
+
 .detailsBox {
   flex: 1 1 50%;
   background-color: #f9fafb;
@@ -38,14 +42,15 @@
 
 /* Keep the rest the same */
 .title {
+  color: #111827;
   font-size: 2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem
 }
 
 .description {
   font-size: 1rem;
   margin-bottom: 1.5rem;
-  color: #4b5563;
+  color:black;
 }
 
 .detailsList {
