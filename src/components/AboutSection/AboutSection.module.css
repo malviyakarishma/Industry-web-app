@@ -1,23 +1,9 @@
-/* src/components/AboutSection/AboutSection.module.css */
 
-/* Assuming you have a global .container class like this:
-.container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;  // Example padding
-  padding-right: 1rem; // Example padding
-}
-@media (min-width: 640px) { .container { max-width: 640px; } }
-@media (min-width: 768px) { .container { max-width: 768px; } }
-@media (min-width: 1024px) { .container { max-width: 1024px; } }
-@media (min-width: 1280px) { .container { max-width: 1280px; } }
-*/
 
 .aboutSection {
   padding-top: 4rem; /* py-16 */
   padding-bottom: 4rem; /* py-16 */
-  background-color: var(--color-bg-white, #ffffff); /* Added fallback */
+  background-color:black; /* Added fallback */
   color: var(--color-text-dark, #333333); /* Default text color for the section */
 }
 @media (min-width: 768px) { /* md breakpoint */
@@ -73,7 +59,8 @@
 
 .imageContainer {
   width: 100%;
-  order: 1; /* Default order */
+  order: 1; 
+  padding-left: 20px;/* Default order */
 }
 @media (min-width: 768px) {
   /* Optional: Alternate image and text order on larger screens for visual interest on subsequent sections
@@ -162,38 +149,3 @@
   margin-top: 1.5rem; /* mt-6 */
 }
 
-.ctaButton {
-  display: inline-block;
-  padding: 0.75rem 1.75rem; /* py-3 px-7 */
-  background-color: var(--color-primary, #007bff); /* Primary action color */
-  color: var(--color-bg-white, #ffffff);
-  font-size: 1rem; /* text-base */
-  font-weight: 600; /* font-semibold */
-  text-decoration: none;
-  border-radius: var(--border-radius-md, 0.375rem); /* rounded-md */
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06));
-}
-
-.ctaButton:hover,
-.ctaButton:focus {
-  background-color: var(--color-primary-dark, #0056b3); /* Darker shade on hover/focus */
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05));
-  outline: none; /* Remove default focus outline if custom focus is handled or not needed */
-}
-
-.ctaButton:focus-visible { /* Modern accessibility for focus */
-  outline: 2px solid var(--color-primary-dark, #0056b3);
-  outline-offset: 2px;
-}
-
-
-/* Optional: Style for an icon inside the CTA button */
-.ctaIcon {
-  width: 1.25rem; /* w-5 */
-  height: 1.25rem; /* h-5 */
-  margin-left: 0.5rem; /* ml-2 */
-  display: inline-block;
-  vertical-align: middle;
-}

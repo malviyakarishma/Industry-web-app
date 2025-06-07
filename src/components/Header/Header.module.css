@@ -1,7 +1,7 @@
-/* src/components/Header/Header.module.css */
+/* UPDATED: Header is now transparent and has no shadow */
 .header {
-  background-color: var(--color-bg-white);
-  box-shadow: var(--shadow-md);
+  background-color: transparent;
+  box-shadow: none;
   position: sticky;
   top: 0;
   z-index: 50;
@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%; /* Changed from h-20 */
+  height: 100%;
 }
 
 .logoContainer {
@@ -20,121 +20,123 @@
 }
 
 .logo {
-  font-size: 1.5rem; /* text-2xl */
-  font-weight: 700; /* font-bold */
-  color: var(--color-primary);
-}
-
-.desktopNav {
-  display: none; /* hidden */
-}
-
-@media (min-width: 768px) { /* md breakpoint */
-  .desktopNav {
-    display: flex;
-    gap: 1.5rem; /* space-x-6 */
-  }
-}
-@media (min-width: 1024px) { /* lg breakpoint */
-  .desktopNav {
-    gap: 2rem; /* lg:space-x-8 */
-  }
+  font-size: 1.25rem; /* Slightly smaller base for mobile */
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .navLink {
-  color: var(--color-text-medium); /* text-gray-600 */
-  padding: 0.5rem 0.75rem; /* px-3 py-2 */
-  border-radius: var(--border-radius-md); /* rounded-md */
-  font-size: 0.875rem; /* text-sm */
-  font-weight: 500; /* font-medium */
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease;
 }
 
-.navLink:hover {
-  color: var(--color-primary); /* hover:text-blue-600 */
-  background-color: #EFF6FF; /* Example: blue-50 for hover bg */
+/* Hide desktop nav on mobile */
+.navWrapper {
+  display: none;
 }
 
-.mobileMenuButtonContainer {
-  display: flex; /* md:hidden flex items-center */
-  align-items: center;
-}
-@media (min-width: 768px) { /* md breakpoint */
+/* === Desktop Styles (md breakpoint: 768px and up) === */
+@media (min-width: 768px) {
+  .header {
+    padding: 1.5rem 2rem; /* More padding on larger screens */
+  }
+
+  .logo {
+    font-size: 1.5rem; /* Larger logo font on desktop */
+  }
+
+  /* This is the unified "glass box" style */
+  .logoContainer,
+  .navWrapper {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border: 2px solid rgba(255, 255, 255, 0.7);   /* The white border */
+    border-radius: 12px;
+    padding: 0.5rem;
+    -webkit-backdrop-filter: blur(10px); /* Blurs the video behind it */
+    backdrop-filter: blur(10px);
+  }
+  
+  .logoContainer {
+    padding: 0.5rem 1.5rem; /* Give the logo a bit more horizontal padding */
+  }
+
+  .navWrapper {
+    display: block; /* Show the nav wrapper on desktop */
+  }
+
+  .desktopNav {
+    display: flex;
+    gap: 0.5rem; /* Space between nav links */
+  }
+  
+  .navLink:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Subtle hover effect */
+  }
+  
+  /* Hide mobile menu button on desktop */
   .mobileMenuButtonContainer {
     display: none;
   }
 }
 
+/* === Mobile Menu Button === */
 .mobileMenuButton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem; /* p-2 */
-  border-radius: var(--border-radius-md);
-  color: var(--color-text-medium); /* text-gray-500 */
-  background-color: transparent;
-  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2); /* Ensure visibility */
+  border: 1px solid rgba(255, 255, 255, 0.5);
   cursor: pointer;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 }
 
-.mobileMenuButton:hover {
-  color: var(--color-text-dark); /* hover:text-gray-700 */
-  background-color: var(--color-bg-medium); /* hover:bg-gray-100 */
-}
-
-.mobileMenuButton:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px var(--color-primary); /* focus:ring-2 focus:ring-inset focus:ring-blue-500 */
-}
-
-/* Mobile Menu Styles */
+/* === Mobile Menu Panel (when open) === */
 .mobileMenu {
-  background-color: var(--color-bg-white);
-  box-shadow: var(--shadow-lg);
-  display: none; /* hidden by default */
-  position: absolute; /* Added for positioning */
-  top: var(--header-height); /* Position below header */
-  left: 0;
-  right: 0;
-  z-index: 40; /* Below header but above content */
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: calc(var(--header-height, 80px) - 1rem); /* Position below header */
+  left: 1rem;
+  right: 1rem;
+  z-index: 40;
+  
+  /* The dropdown should have a solid background for readability */
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  overflow: hidden;
 }
 
 .mobileMenuOpen {
   display: block; /* Show when open */
 }
-@media (min-width: 768px) { /* md breakpoint */
-  .mobileMenu { /* md:hidden */
-    display: none !important; /* Ensure it's hidden on larger screens */
-  }
-}
-
 
 .mobileNavLinks {
-  padding: 0.5rem 0.5rem 0.75rem; /* px-2 pt-2 pb-3 */
   display: flex;
   flex-direction: column;
-  gap: 0.25rem; /* space-y-1 */
-}
-
-@media (min-width: 640px) { /* sm breakpoint */
-  .mobileNavLinks {
-    padding-left: 0.75rem; /* sm:px-3 */
-    padding-right: 0.75rem; /* sm:px-3 */
-  }
+  gap: 0.5rem;
 }
 
 .mobileNavLink {
-  color: var(--color-text-dark); /* text-gray-700 */
+  color: #333; /* Dark text on the white background */
   display: block;
-  padding: 0.5rem 0.75rem; /* px-3 py-2 */
-  border-radius: var(--border-radius-md);
-  font-size: 1rem; /* text-base */
-  font-weight: 500; /* font-medium */
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .mobileNavLink:hover {
-  background-color: #EFF6FF; /* hover:bg-blue-50, a light blue */
-  color: var(--color-primary); /* hover:text-blue-600 */
+  background-color: #f0f0f0;
+  color: var(--color-primary);
 }

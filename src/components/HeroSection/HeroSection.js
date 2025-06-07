@@ -1,22 +1,85 @@
-// src/components/HeroSection/HeroSection.js
-import React from 'react';
-import Link from 'next/link';
-import styles from './HeroSection.module.css';
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import styles from "./HeroSection.module.css";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 const HeroSection = () => {
+  const title = "Innovative Solutions";
+
+  const container = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+      },
+    },
+  };
+
+  const letter = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.3 },
+    },
+  };
+
   return (
     <section id="home" className={styles.heroSection}>
+      <video className={styles.heroVideo} autoPlay muted loop playsInline>
+        <source src="/videos/3987526-hd_1920_1080_25fps.mp4" type="video/mp4" />
+      </video>
+
+      {/* Overlay Content */}
       <div className={styles.heroOverlay}>
         <div className={`container ${styles.heroContainer}`}>
-          <h1 className={styles.heroTitle}>
-            Innovative Solutions
-          </h1>
+          <motion.h1
+            className={styles.heroTitle}
+            variants={container}
+            initial="hidden"
+            animate="visible"
+          >
+            {title.split("").map((char, index) => (
+              <motion.span
+                key={index}
+                variants={letter}
+                style={{
+                  display: "inline-block",
+                  color: "white",
+                  fontWeight: "700",
+                }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+          </motion.h1>
+
           <p className={styles.heroSubtitle}>
-            Delivering high-quality, durable plastic components for various industries.
+            Delivering high-quality, durable plastic components for various
+            industries.
           </p>
-          <div>
-            <Link href="/products" className={styles.heroButton}>
-              Explore Our Products
+
+          {/* New structure with a container and gear images */}
+          <div className={styles.buttonContainer}>
+            <Link href="/products" className={styles.gearButton}>
+              {/* The gear image will act as the button's body */}
+              <Image
+                src="/images/WhatsApp_Image_2025-06-07_at_19.38.55_323c0ee1-removebg-preview.png"
+                alt="Industrial Gear"
+                className={styles.gearImage}
+                width={250} // A much bigger size
+                height={250}
+              />
+              <span className={styles.gearText}>
+                Explore
+                <br />
+                Products
+              </span>
             </Link>
           </div>
         </div>

@@ -1,16 +1,30 @@
-/* src/components/HeroSection/HeroSection.module.css */
 .heroSection {
-  color: var(--color-text-inverted);
-  /* From inline style: hero-bg */
-  background-image: url('/images/banner.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative; /* For overlay */
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  /* UPDATED: Pulls the section up behind the sticky header.
+    Ensure '--header-height' is defined globally (e.g., in globals.css) 
+    and matches your header's height.
+  */
+  margin-top: calc(-1 * var(--header-height, 80px)); /* 80px is a fallback */
+}
+
+.heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .heroOverlay {
-  background-color: rgba(0, 0, 0, 0.5); /* bg-black bg-opacity-50 */
-  min-height: 70vh;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Optional overlay */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,25 +43,32 @@
 }
 @media (min-width: 768px) { /* md breakpoint */
   .heroContainer {
-    padding-top: 6rem; /* md:py-24 */
+    padding-top: 14rem; /* md:py-24 */
     padding-bottom: 6rem; /* md:py-24 */
   }
 }
 
 .heroTitle {
-  font-size: 2.25rem; /* text-4xl */
-  font-weight: 700; /* font-bold */
-  margin-bottom: 1.5rem; /* mb-6 */
-  line-height: 1.2; /* leading-tight */
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: white;
+  
+  white-space: nowrap;  /* Prevent wrapping and shifting */
+  overflow: visible;    /* Allow animation */
+  border-right: none;
+  display: inline-flex; /* Use inline-flex for letters */
+  gap: 0.05em;          /* Spacing between letters */
 }
-@media (min-width: 640px) { /* sm breakpoint */
+@media (min-width: 640px) {
   .heroTitle {
-    font-size: 3rem; /* sm:text-5xl */
+    font-size: 3rem;
   }
 }
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 768px) {
   .heroTitle {
-    font-size: 3.75rem; /* md:text-6xl */
+    font-size: 3.75rem;
   }
 }
 
@@ -57,6 +78,7 @@
   max-width: 48rem; /* max-w-3xl */
   margin-left: auto;
   margin-right: auto;
+  color: white;
 }
 @media (min-width: 640px) { /* sm breakpoint */
   .heroSubtitle {
@@ -69,20 +91,73 @@
   }
 }
 
-.heroButton {
-  background-color: var(--color-primary); /* bg-blue-600 */
-  color: var(--color-bg-white); /* text-white */
-  font-weight: 600; /* font-semibold */
-  padding: 0.75rem 2rem; /* py-3 px-8 */
-  border-radius: var(--border-radius-lg); /* rounded-lg */
-  font-size: 1.125rem; /* text-lg */
-  transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out;
-  box-shadow: var(--shadow-lg); /* shadow-lg */
-  display: inline-block; /* To apply transform */
+
+
+/* The keyframe animation for rotation */
+/* --- CSS FOR GEAR WITH FADING TEXT --- */
+
+/* The keyframe animation for rotation (this stays the same) */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.heroButton:hover {
-  background-color: var(--color-primary-hover); /* hover:bg-blue-700 */
-  box-shadow: var(--shadow-xl); /* hover:shadow-xl */
-  transform: scale(1.05); /* hover:scale-105 */
+/* The main link component, which acts as our container */
+.gearButton {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.1s ease-out;
+}
+
+/* The gear image itself (this stays the same) */
+.gearImage {
+  animation: rotate 4s linear infinite;
+}
+
+/* The text centered in the middle of the gear */
+.gearText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif; /* Ensure consistent font */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+
+  /*
+    THIS IS THE KEY CHANGE:
+    1. Start with the text being completely invisible.
+    2. Apply a smooth transition to the opacity property.
+  */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Buttery smooth half-second fade */
+}
+
+
+/* --- THE ANIMATION TRIGGERS --- */
+
+/* ADD THIS NEW RULE: When you hover the button... */
+.gearButton:hover .gearText {
+  /* ...the text becomes fully visible. */
+  opacity: 1;
+}
+
+/* On click, give a satisfying "press" effect (this stays the same) */
+.gearButton:active {
+  transform: scale(0.95);
 }

@@ -2,7 +2,7 @@
 .servicesSection {
   padding-top: 4rem; /* py-16 */
   padding-bottom: 4rem;
-  background-color: var(--color-bg-white); /* bg-white */
+  background-color: black; 
 }
 @media (min-width: 768px) { /* md breakpoint */
   .servicesSection {

@@ -1,4 +1,3 @@
-// src/components/Header/Header.js
 'use client'; // This component needs client-side interactivity
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -63,13 +62,16 @@ const Header = () => {
           <Link href="#home" className={styles.logo}>Baneshwari Industries</Link>
         </div>
 
-        <nav className={styles.desktopNav}>
-          {navItems.map(item => (
-            <Link key={item.href} href={item.href} className={styles.navLink}>
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        {/* UPDATED: Wrapped nav in a div for styling the block */}
+        <div className={styles.navWrapper}>
+          <nav className={styles.desktopNav}>
+            {navItems.map(item => (
+              <Link key={item.href} href={item.href} className={styles.navLink}>
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
 
         <div className={styles.mobileMenuButtonContainer}>
           <button

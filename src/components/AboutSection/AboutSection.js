@@ -44,10 +44,12 @@ const AboutSection = () => {
           <div className={styles.textContainer}>
             <p className={styles.paragraph}>
               At Baneshwari Industries, we are dedicated to delivering top-tier plastic products precisely tailored to meet the diverse needs of our valued clients. Our advanced manufacturing facilities and a passionate team of experts ensure every product adheres to the highest standards of quality, durability, and innovation.
+            <br></br>
+            <br></br>
+            We specialize in a comprehensive range of plastic manufacturing processes, including precision injection molding, versatile blow molding, and efficient extrusion. Our unwavering focus on innovation, operational sustainability, and complete customer satisfaction has established us as a recognized leader in the industry.
             </p>
-            <p className={styles.paragraph}>
-              We specialize in a comprehensive range of plastic manufacturing processes, including precision injection molding, versatile blow molding, and efficient extrusion. Our unwavering focus on innovation, operational sustainability, and complete customer satisfaction has established us as a recognized leader in the industry.
-            </p>
+
+           
             
             <h3 className={styles.strengthsTitle}>Our Key Strengths:</h3>
             <ul className={styles.strengthsList}>
@@ -62,12 +64,7 @@ const AboutSection = () => {
               ))}
             </ul>
             
-            <div className={styles.ctaContainer}>
-              <Link href="/contact" className={styles.ctaButton}>
-                Partner With Us
-                {/* Optional: <ChevronRightIcon className={styles.ctaIcon} /> */}
-              </Link>
-            </div>
+           
           </div>
         </div>
       </div>

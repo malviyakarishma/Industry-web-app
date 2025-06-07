@@ -2,7 +2,7 @@
 .productsSection {
   padding-top: 4rem; /* py-16 */
   padding-bottom: 4rem;
-  background-color: var(--color-bg-light); /* bg-gray-50 */
+  background-color: black; /* bg-gray-50 */
 }
 @media (min-width: 768px) { /* md breakpoint */
   .productsSection {
