@@ -27,7 +27,7 @@ const ContactSection = () => {
         <div className={styles.headingContainer}>
           <h2 id="contact-section-title" className={styles.sectionTitle}>Get In Touch</h2>
           <p className={styles.sectionSubtitle}>
-            Have a project in mind, need a quote, or want to learn more about our services? We're here to help.
+            {`Have a project in mind, need a quote, or want to learn more about our services? We're here to help.`}
           </p>
         </div>
 
