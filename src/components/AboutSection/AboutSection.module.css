@@ -26,7 +26,7 @@
 .sectionTitle {
   font-size: 2rem; /* Slightly adjusted from 1.875rem for better impact */
   font-weight: 700; /* font-bold */
-  color: var(--color-text-dark, #1F2937);
+  color: rgb(92, 92, 229);
   margin-bottom: 0.75rem; /* mb-3, reduced slightly as subtitle adds more space */
   line-height: 1.2;
 }
@@ -38,7 +38,7 @@
 
 .sectionSubtitle {
   font-size: 1.125rem; /* text-lg */
-  color: var(--color-text-medium, #6B7280);
+  color: whitesmoke;
   max-width: 48rem; /* max-w-2.5xl, slightly wider for better flow */
   margin-left: auto;
   margin-right: auto;
@@ -100,7 +100,7 @@
 .paragraph {
   font-size: 1rem; 
   line-height: 1.7; /* leading-relaxed, slightly increased for readability */
-  color: var(--color-text-content, #4B5563); /* A slightly lighter shade for body text */
+  color: whitesmoke; /* A slightly lighter shade for body text */
 }
 @media (min-width: 640px) { 
   .paragraph { 
@@ -111,7 +111,7 @@
 .strengthsTitle {
   font-size: 1.25rem; /* text-xl */
   font-weight: 600; /* font-semibold */
-  color: var(--color-text-dark, #1F2937);
+  color:rgb(92, 92, 229) ;
   margin-bottom: 0.5rem; /* mb-2 */
   margin-top: 0.5rem; /* Add some space above the title */
 }
@@ -128,7 +128,7 @@
   display: flex;
   align-items: center;
   font-size: 1rem;
-  color: var(--color-text-content, #4B5563);
+  color: whitesmoke;
   line-height: 1.6;
 }
 @media (min-width: 640px) { 

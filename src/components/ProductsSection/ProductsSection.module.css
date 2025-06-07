@@ -24,7 +24,7 @@
 .sectionTitle {
   font-size: 1.875rem; /* text-3xl */
   font-weight: 700; /* font-bold */
-  color: var(--color-text-dark);
+  color: rgb(92, 92, 229);
   margin-bottom: 1rem; /* mb-4 */
 }
 @media (min-width: 640px) { /* sm breakpoint */

@@ -43,7 +43,7 @@
 .sectionTitle {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--color-text-dark, #111827);
+  color: rgb(92, 92, 229);
   margin-bottom: 0.75rem;
   line-height: 1.2;
 }
@@ -55,7 +55,7 @@
 
 .sectionSubtitle {
   font-size: 1.125rem;
-  color: var(--color-text-medium, #4B5563);
+  color: whitesmoke;
   max-width: 48rem;
   margin-left: auto;
   margin-right: auto;
