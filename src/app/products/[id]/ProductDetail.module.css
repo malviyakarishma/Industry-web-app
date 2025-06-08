@@ -1,4 +1,6 @@
 .container {
+  background: linear-gradient(to bottom right, #313448, #10101e); 
+;
   display: flex;
   flex-wrap: nowrap; /* prevent wrapping so heights align */
   gap: 2rem;
@@ -26,12 +28,13 @@
 }
 
 .productdetails{
-  color: #111827;
+  color: whitesmoke ;
+  text-decoration: underline;
 }
 
 .detailsBox {
   flex: 1 1 50%;
-  background-color: #f9fafb;
+  background-color: #7e57c246;
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -42,7 +45,7 @@
 
 /* Keep the rest the same */
 .title {
-  color: #111827;
+  color: whitesmoke;
   font-size: 2rem;
   margin-bottom: 0.5rem
 }
@@ -50,7 +53,7 @@
 .description {
   font-size: 1rem;
   margin-bottom: 1.5rem;
-  color:black;
+  color: whitesmoke;
 }
 
 .detailsList {
@@ -62,12 +65,12 @@
 .detailsList li {
   margin-bottom: 0.75rem;
   font-size: 1rem;
-  color: #374151;
+  color: wheat;
 }
 
 .detailsList strong {
   font-weight: 600;
-  color: #111827;
+  color: whitesmoke;
 }
 
 /* Responsive Design */

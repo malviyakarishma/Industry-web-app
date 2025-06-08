@@ -3,12 +3,10 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./HeroSection.module.css";
-
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const HeroSection = () => {
-  const title = "Innovative Solutions";
+  const title = "Baneshwari Industries";
 
   const container = {
     hidden: { opacity: 1 },
@@ -48,10 +46,11 @@ const HeroSection = () => {
               <motion.span
                 key={index}
                 variants={letter}
+                className={styles.shinyLetter}
                 style={{
                   display: "inline-block",
-                  color: "white",
                   fontWeight: "700",
+                  animationDelay: `${index * 0.15}s`,
                 }}
               >
                 {char === " " ? "\u00A0" : char}
@@ -60,26 +59,13 @@ const HeroSection = () => {
           </motion.h1>
 
           <p className={styles.heroSubtitle}>
-            Delivering high-quality, durable plastic components for various
-            industries.
+            Discover our wide range of high-quality products.
           </p>
 
           {/* New structure with a container and gear images */}
           <div className={styles.buttonContainer}>
-            <Link href="/products" className={styles.gearButton}>
-              {/* The gear image will act as the button's body */}
-              <Image
-                src="/images/WhatsApp_Image_2025-06-07_at_19.38.55_323c0ee1-removebg-preview.png"
-                alt="Industrial Gear"
-                className={styles.gearImage}
-                width={250} // A much bigger size
-                height={250}
-              />
-              <span className={styles.gearText}>
-                Explore
-                <br />
-                Products
-              </span>
+            <Link href="/products" className={styles.heroButton}>
+              Explore our Products
             </Link>
           </div>
         </div>

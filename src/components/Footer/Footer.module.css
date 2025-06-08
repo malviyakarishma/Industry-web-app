@@ -1,14 +1,12 @@
 /* src/components/Footer/Footer.module.css */
 .footer {
-  background-color: var(--color-bg-darker); /* bg-gray-900 */
+  background-color: rgb(9, 9, 38); /* bg-gray-900 */
   color: var(--color-text-light); /* text-gray-400 */
   padding-top: 3rem; /* py-12 */
   padding-bottom: 3rem; /* py-12 */
 }
 
-.footerContainer {
-  /* Uses global .container for padding and max-width */
-}
+
 
 .footerGrid {
   display: grid;

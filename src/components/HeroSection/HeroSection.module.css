@@ -2,10 +2,6 @@
   position: relative;
   height: 100vh;
   overflow: hidden;
-  /* UPDATED: Pulls the section up behind the sticky header.
-    Ensure '--header-height' is defined globally (e.g., in globals.css) 
-    and matches your header's height.
-  */
   margin-top: calc(-1 * var(--header-height, 80px)); /* 80px is a fallback */
 }
 
@@ -53,14 +49,56 @@
   font-weight: 700;
   margin-bottom: 1.5rem;
   line-height: 1.2;
-  color: white;
+  color: #ffffff;
   
   white-space: nowrap;  /* Prevent wrapping and shifting */
   overflow: visible;    /* Allow animation */
   border-right: none;
   display: inline-flex; /* Use inline-flex for letters */
   gap: 0.05em;          /* Spacing between letters */
+  
+  /* 3D effect with multiple layered shadows */
+  text-shadow:
+    1px 1px 0 #666666,
+    2px 2px 0 #555555,
+    3px 3px 5px rgba(0, 0, 0, 0.7),
+    0 0 5px rgba(0, 0, 0, 0.8);
+  /* subtle dark shadows layered for depth */
 }
+
+.shinyLetter {
+  animation: shine 1.5s ease-in-out forwards;
+  /* runs once, forwards keeps the last frame */
+}
+
+@keyframes shine {
+  0% {
+    color: white;
+    text-shadow:
+      1px 1px 0 #666666,
+      2px 2px 0 #555555,
+      3px 3px 5px rgba(0, 0, 0, 0.7),
+      0 0 5px rgba(0, 0, 0, 0.8);
+  }
+  50% {
+    color: whitesmoke;
+    text-shadow:
+      0 0 10px #ffd700,
+      0 0 20px #ff4d00,
+      0 0 30px #00ff04,
+      0 0 40px #0084ff,
+      0 0 50px #ff00ff;
+  }
+  100% {
+    color: rgb(92, 92, 229);
+    text-shadow:
+      1px 1px 0 #444488,
+      2px 2px 0 #333366,
+      3px 3px 5px rgba(50, 50, 100, 0.7),
+      0 0 5px rgba(70, 70, 120, 0.8);
+  }
+}
+
 @media (min-width: 640px) {
   .heroTitle {
     font-size: 3rem;
@@ -71,6 +109,7 @@
     font-size: 3.75rem;
   }
 }
+
 
 .heroSubtitle {
   font-size: 1.125rem; /* text-lg */
@@ -93,71 +132,47 @@
 
 
 
-/* The keyframe animation for rotation */
-/* --- CSS FOR GEAR WITH FADING TEXT --- */
-
-/* The keyframe animation for rotation (this stays the same) */
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* The main link component, which acts as our container */
-.gearButton {
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: white;
-  transition: transform 0.1s ease-out;
-}
-
-/* The gear image itself (this stays the same) */
-.gearImage {
-  animation: rotate 4s linear infinite;
-}
-
-/* The text centered in the middle of the gear */
-.gearText {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center;
-  font-size: 1.25rem;
-  font-weight: 700;
-  font-family: 'Inter', sans-serif; /* Ensure consistent font */
-  text-transform: uppercase;
+/* --- Industrial Hero Button --- */
+.heroButton {
+  /* --- Shape and Font --- */
+  display: inline-block;
+  font-family: 'Arial', sans-serif; /* A strong, clean font */
+  font-size: 1.125rem;
+  font-weight: 700; /* Bold */
+  text-transform: uppercase; /* Common in industrial design */
   letter-spacing: 1px;
-  line-height: 1.2;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-  pointer-events: none;
+  padding: 1rem 2.5rem; /* A bit larger for a sturdy feel */
+  text-decoration: none;
+  
+  /* --- The Metallic Look --- */
+  color: #f0f0f0; /* Off-white text */
+  background-color: #555; /* Dark metal base */
+  border: 1px solid #222; /* Dark edge */
+  border-radius: 6px; /* Less rounded for a machined look */
+  
+  /* --- 3D Effect & Animation --- */
+  /* Multiple shadows: top highlight, bottom shadow, and main drop shadow */
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.2), /* Top highlight */
+    inset 0 -1px 1px rgba(0, 0, 0, 0.4),      /* Bottom inner shadow */
+    0 4px 6px rgba(0, 0, 0, 0.3);             /* Main drop shadow */
 
-  /*
-    THIS IS THE KEY CHANGE:
-    1. Start with the text being completely invisible.
-    2. Apply a smooth transition to the opacity property.
-  */
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out; /* Buttery smooth half-second fade */
+  /* Smooth transition for all changes */
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-
-/* --- THE ANIMATION TRIGGERS --- */
-
-/* ADD THIS NEW RULE: When you hover the button... */
-.gearButton:hover .gearText {
-  /* ...the text becomes fully visible. */
-  opacity: 1;
+/* --- Hover Effect: Lift the button --- */
+.heroButton:hover {
+  /* No need to change background color, just the lighting */
+  transform: translateY(-2px); /* Lift it up slightly */
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.25),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.4),
+    0 6px 12px rgba(0, 0, 0, 0.4); /* Increase drop shadow */
 }
 
-/* On click, give a satisfying "press" effect (this stays the same) */
-.gearButton:active {
-  transform: scale(0.95);
+/* --- Click Animation: Press the button down --- */
+.heroButton:active {
+  transform: translateY(2px); /* Push it down into the page */
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.4); /* Deep inner shadow */
 }

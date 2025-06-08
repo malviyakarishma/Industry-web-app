@@ -3,7 +3,7 @@
 .aboutSection {
   padding-top: 4rem; /* py-16 */
   padding-bottom: 4rem; /* py-16 */
-  background-color:black; /* Added fallback */
+  background: linear-gradient(to bottom right, #313448, #10101e); 
   color: var(--color-text-dark, #333333); /* Default text color for the section */
 }
 @media (min-width: 768px) { /* md breakpoint */

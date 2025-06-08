@@ -2,7 +2,7 @@
 .servicesSection {
   padding-top: 4rem; /* py-16 */
   padding-bottom: 4rem;
-  background-color: black; 
+  background: linear-gradient(to bottom right, #313448, #10101e); 
 }
 @media (min-width: 768px) { /* md breakpoint */
   .servicesSection {

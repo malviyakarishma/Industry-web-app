@@ -1,8 +1,8 @@
 // src/components/ProductsSection/ProductsSection.js
-import React from 'react';
-import ProductCard from './ProductCard';
-import styles from './ProductsSection.module.css';
-import productsData from './ProductData'; // ✅ Correct import
+import React from "react";
+import ProductCard from "./ProductCard";
+import styles from "./ProductsSection.module.css";
+import productsData from "./ProductData"; // ✅ Correct import
 
 const ProductsSection = () => {
   return (
@@ -11,7 +11,7 @@ const ProductsSection = () => {
         <div className={styles.headingContainer}>
           <h2 className={styles.sectionTitle}>Our Products</h2>
           <p className={styles.sectionSubtitle}>
-            Discover our wide range of high-quality plastic products designed for various applications.
+            Discover our wide range of high-quality products.
           </p>
         </div>
         <div className={styles.productsGrid}>

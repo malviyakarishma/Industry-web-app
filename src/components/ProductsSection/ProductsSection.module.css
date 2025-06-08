@@ -2,7 +2,7 @@
 .productsSection {
   padding-top: 4rem; /* py-16 */
   padding-bottom: 4rem;
-  background-color: black; /* bg-gray-50 */
+  background: linear-gradient(to bottom right, #313448, #10101e); 
 }
 @media (min-width: 768px) { /* md breakpoint */
   .productsSection {
@@ -64,7 +64,7 @@
 
 /* ProductCard specific styles */
 .productCard {
-  background-color: rgb(84, 78, 78); /* bg-white */
+  background-color: #7e57c246; 
   border-radius: var(--border-radius-lg); /* rounded-lg */
   box-shadow: var(--shadow-lg); /* shadow-lg */
   overflow: hidden; /* overflow-hidden */
